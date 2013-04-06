@@ -43,15 +43,19 @@ import org.xml.sax.SAXException;
  * 
  * @author ebraminio
  */
-public class CalendarUtils {
-	private static CalendarUtils myInstance;
+public class Utils {
+	private static Utils myInstance;
 
-	public static CalendarUtils getInstance() {
+	public static Utils getInstance() {
 		if (myInstance == null) {
-			myInstance = new CalendarUtils();
+			myInstance = new Utils();
 		}
 		return myInstance;
 	}
+	
+	private Utils() {
+	}
+	//
 
 	public final char PERSIAN_COMMA = '،';
 
@@ -224,38 +228,21 @@ public class CalendarUtils {
 		return sb.toString();
 	}
 
-	public String dateToString(AbstractDate date, char[] digits,
-			boolean showYear) {
-		StringBuilder sb = new StringBuilder();
-		sb.append(formatNumber(date.getDayOfMonth(), digits));
-		sb.append(' ');
-		sb.append(date.getMonthName());
-
-		if (showYear) {
-			sb.append(' ');
-			sb.append(formatNumber(date.getYear(), digits));
-		}
-
-		return sb.toString();
+	public String dateToString(AbstractDate date, char[] digits) {
+		return formatNumber(date.getDayOfMonth(), digits) + ' '
+				+ date.getMonthName() + ' ' + formatNumber(date.getYear(), digits);
 	}
 
 	public String dayTitleSummary(CivilDate civilDate, char[] digits) {
-		return getDayOfWeekName(civilDate.getDayOfWeek())
-				+ PERSIAN_COMMA
-				+ " "
-				+ dateToString(DateConverter.civilToPersian(civilDate), digits,
-						true);
+		return getDayOfWeekName(civilDate.getDayOfWeek()) + PERSIAN_COMMA + " "
+				+ dateToString(DateConverter.civilToPersian(civilDate), digits);
 	}
 
 	public String infoForSpecificDay(CivilDate civilDate, char[] digits) {
-		return dayTitleSummary(civilDate, digits)
-				+ "\n\n"
-				+ equalWith
-				+ ":\n"
-				+ dateToString(civilDate, digits, true)
-				+ "\n"
-				+ dateToString(DateConverter.civilToIslamic(civilDate), digits,
-						true) + "\n";
+		return dayTitleSummary(civilDate, digits) + "\n\n" + equalWith + ":\n"
+				+ dateToString(civilDate, digits) + "\n"
+				+ dateToString(DateConverter.civilToIslamic(civilDate), digits)
+				+ "\n";
 	}
 
 	public String getMonthYearTitle(PersianDate persianDate, char[] digits) {

@@ -1,14 +1,20 @@
 package com.byagowi.persiancalendar;
 
+import java.util.Calendar;
+import java.util.Date;
+
+import com.google.android.apps.dashclock.api.ExtensionData;
+
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.appwidget.AppWidgetManager;
-import android.content.*;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
@@ -16,45 +22,22 @@ import calendar.CivilDate;
 import calendar.DateConverter;
 import calendar.PersianDate;
 
-import java.util.Calendar;
-import java.util.Date;
+public class UpdateUtils {
+	private static UpdateUtils myInstance;
 
-/**
- * The Calendar Service that updates widget time and clock and build/update
- * calendar notification.
- * 
- * @author Ebrahim Byagowi <ebrahim@byagowi.com>
- */
-public class CalendarService extends Service {
-	private final CalendarUtils utils = CalendarUtils.getInstance();
-
-	@Override
-	public IBinder onBind(Intent paramIntent) {
-		return null;
-	}
-
-	private static int count = 0;
-
-	@Override
-	public int onStartCommand(Intent intent, int flags, int startId) {
-		count++;
-		if (count == 1) {
-			IntentFilter intentFilter = new IntentFilter();
-			intentFilter.addAction(Intent.ACTION_DATE_CHANGED);
-			intentFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
-			intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
-			intentFilter.addAction(Intent.ACTION_SCREEN_ON);
-			intentFilter.addAction(Intent.ACTION_TIME_TICK);
-			registerReceiver(new BroadcastReceiver() {
-				@Override
-				public void onReceive(Context context, Intent intent) {
-					update(context);
-				}
-			}, intentFilter);
+	public static UpdateUtils getInstance() {
+		if (myInstance == null) {
+			myInstance = new UpdateUtils();
 		}
-		update(getApplicationContext());
-		return super.onStartCommand(intent, flags, startId);
+		return myInstance;
 	}
+
+	private UpdateUtils() {
+	}
+
+	//
+
+	private final Utils utils = Utils.getInstance();
 
 	private static final int NOTIFICATION_ID = 1001;
 	private NotificationManager mNotificationManager;
@@ -64,17 +47,15 @@ public class CalendarService extends Service {
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		char[] digits = utils.preferredDigits(context);
-
-		PendingIntent launchAppPendingIntent = PendingIntent.getActivity(
-				context, 0, new Intent(context, CalendarActivity.class),
-				PendingIntent.FLAG_UPDATE_CURRENT);
-
 		boolean iranTime = prefs.getBoolean("IranTime", false);
 		Calendar calendar = utils.makeCalendarFromDate(new Date(), iranTime);
-
 		CivilDate civil = new CivilDate(calendar);
 		PersianDate persian = DateConverter.civilToPersian(civil);
 		persian.setDari(utils.isDariVersion(context));
+
+		Intent intent = new Intent(context, MainActivity.class);
+		PendingIntent launchAppPendingIntent = PendingIntent.getActivity(
+				context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 		// Widgets
 		{
@@ -88,14 +69,14 @@ public class CalendarService extends Service {
 			// Widget 1x1
 			remoteViews1.setTextColor(R.id.textPlaceholder1_1x1, color);
 			remoteViews1.setTextColor(R.id.textPlaceholder2_1x1, color);
-			remoteViews1.setTextViewText(R.id.textPlaceholder2_1x1,
-					utils.textShaper(persian.getMonthName()));
 			remoteViews1.setTextViewText(R.id.textPlaceholder1_1x1,
 					utils.formatNumber(persian.getDayOfMonth(), digits));
+			remoteViews1.setTextViewText(R.id.textPlaceholder2_1x1,
+					utils.textShaper(persian.getMonthName()));
 			remoteViews1.setOnClickPendingIntent(R.id.widget_layout1x1,
 					launchAppPendingIntent);
-			manager.updateAppWidget(new ComponentName(context,
-					CalendarWidget1x1.class), remoteViews1);
+			manager.updateAppWidget(
+					new ComponentName(context, Widget1x1.class), remoteViews1);
 
 			// Widget 4x1
 			remoteViews4.setTextColor(R.id.textPlaceholder1_4x1, color);
@@ -106,9 +87,9 @@ public class CalendarService extends Service {
 			String text2;
 			String text3 = "";
 			text1 = utils.getDayOfWeekName(civil.getDayOfWeek());
-			String dayTitle = utils.dateToString(persian, digits, true);
+			String dayTitle = utils.dateToString(persian, digits);
 			text2 = dayTitle + utils.PERSIAN_COMMA + " "
-					+ utils.dateToString(civil, digits, true);
+					+ utils.dateToString(civil, digits);
 
 			boolean enableClock = prefs.getBoolean("WidgetClock", true);
 			if (enableClock) {
@@ -129,47 +110,59 @@ public class CalendarService extends Service {
 
 			remoteViews4.setOnClickPendingIntent(R.id.widget_layout4x1,
 					launchAppPendingIntent);
-			manager.updateAppWidget(new ComponentName(context,
-					CalendarWidget4x1.class), remoteViews4);
+			manager.updateAppWidget(
+					new ComponentName(context, Widget4x1.class), remoteViews4);
 		}
 
-		// Notification Permanent Bar
+		// Permanent Notification Bar and DashClock Data Extension Update
 		{
+			String status = persian.getMonthName();
+
+			String title = utils.getDayOfWeekName(civil.getDayOfWeek()) + " "
+					+ utils.dateToString(persian, digits);
+
+			String body = utils.dateToString(civil, digits)
+					+ utils.PERSIAN_COMMA
+					+ " "
+					+ utils.dateToString(DateConverter.civilToIslamic(civil),
+							digits);
+
+			int icon = utils.getDayIconResource(persian.getDayOfMonth());
+
 			if (mNotificationManager == null) {
-				mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+				mNotificationManager = (NotificationManager) context
+						.getSystemService(Context.NOTIFICATION_SERVICE);
 			}
 			if (prefs.getBoolean("NotifyDate", true)) {
-
-				String title = utils.getDayOfWeekName(civil.getDayOfWeek())
-						+ " " + utils.dateToString(persian, digits, true);
-
-				String contentText = utils.dateToString(civil, digits, true)
-						+ utils.PERSIAN_COMMA
-						+ " "
-						+ utils.dateToString(
-								DateConverter.civilToIslamic(civil), digits,
-								true);
-
 				if (largeIcon == null)
-					largeIcon = BitmapFactory.decodeResource(getResources(),
-							R.drawable.launcher_icon);
+					largeIcon = BitmapFactory.decodeResource(
+							context.getResources(), R.drawable.launcher_icon);
 
 				mNotificationManager.notify(
 						NOTIFICATION_ID,
-						new NotificationCompat.Builder(this)
+						new NotificationCompat.Builder(context)
 								.setPriority(NotificationCompat.PRIORITY_LOW)
-								.setOngoing(true)
-								.setLargeIcon(largeIcon)
-								.setSmallIcon(
-										utils.getDayIconResource(persian
-												.getDayOfMonth()))
+								.setOngoing(true).setLargeIcon(largeIcon)
+								.setSmallIcon(icon)
 								.setContentIntent(launchAppPendingIntent)
-								.setContentText(utils.textShaper(contentText))
+								.setContentText(utils.textShaper(body))
 								.setContentTitle(utils.textShaper(title))
 								.build());
 			} else {
 				mNotificationManager.cancel(NOTIFICATION_ID);
 			}
+
+			mExtensionData = new ExtensionData().visible(true).icon(icon)
+					.status(utils.textShaper(status))
+					.expandedTitle(utils.textShaper(title))
+					.expandedBody(utils.textShaper(body)).clickIntent(intent);
 		}
 	}
+
+	private ExtensionData mExtensionData;
+
+	public ExtensionData getExtensionData() {
+		return mExtensionData;
+	}
+
 }

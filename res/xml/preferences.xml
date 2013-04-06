@@ -26,7 +26,12 @@
             android:summary="@string/enable_notify"
             android:title="@string/notify_date" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/widget" >
+    <PreferenceCategory android:title="@string/widget_notification_dashclock" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="NotifyDate"
+            android:summary="@string/enable_notify"
+            android:title="@string/notify_date" />
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             alphaSlider="true"
             android:defaultValue="@android:color/white"

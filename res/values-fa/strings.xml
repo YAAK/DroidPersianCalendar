@@ -26,7 +26,7 @@
     <string name="logo">نشان</string>
     <string name="dari_months">ماه‌های دری</string>
     <string name="enable_dari">فعال‌سازی ماه‌های دری</string>
-    <string name="widget">ویجت</string>
+    <string name="widget_notification_dashclock">ویجت، نوار مطلع‌سازی و دش‌کلاک</string>
     <string name="general">عمومی</string>
     <string name="widget_text_color">رنگ نوشته‌های ویجت</string>
     <string name="select_widgets_text_color">انتخاب رنگ دلخواه برای نوشته‌های ویجت‌ها</string>
@@ -41,7 +41,7 @@
     <string name="altitude_praytime">به متر (اختیاری)</string>
     <string name="location">مکان</string>
     <string name="location_help">اگر هیچ‌کدام نیست مختصات را زیر وارد کنید</string>
-    <string name="showing_iran_time">نمایش ویجت‌ها و نوار هشدار به وقت ایران</string>
+    <string name="showing_iran_time">نمایش ویجت‌ها و نوار مطلع‌سازی به وقت ایران</string>
     <string name="iran_time">وقت ایران</string>
     <string name="qibla_compass">قطب‌نما/قبله‌نما</string>
     <string name="compass_not_found">سنسور قطب‌نما یافت نشد</string>

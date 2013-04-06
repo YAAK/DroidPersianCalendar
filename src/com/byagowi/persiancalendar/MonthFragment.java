@@ -23,8 +23,8 @@ import com.byagowi.common.Range;
  * 
  * @author ebraminio
  */
-public class CalendarMonthFragment extends Fragment {
-	private final CalendarUtils utils = CalendarUtils.getInstance();
+public class MonthFragment extends Fragment {
+	private final Utils utils = Utils.getInstance();
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -135,7 +135,7 @@ public class CalendarMonthFragment extends Fragment {
 							R.color.holidays_text_color));
 				}
 				ClickDayListener listener = new ClickDayListener(holidayTitle,
-						persianDate.clone(), (CalendarActivity) getActivity());
+						persianDate.clone(), (MainActivity) getActivity());
 				textView.setOnClickListener(listener);
 				textView.setOnLongClickListener(listener);
 

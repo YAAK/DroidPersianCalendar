@@ -21,8 +21,8 @@ import calendar.PersianDate;
  * 
  * @author ebraminio
  */
-public class CalendarActivity extends FragmentActivity {
-	public CalendarUtils utils = CalendarUtils.getInstance();
+public class MainActivity extends FragmentActivity {
+	public Utils utils = Utils.getInstance();
 
 	private ViewPager viewPager;
 	private TextView calendarInfo;
@@ -33,7 +33,7 @@ public class CalendarActivity extends FragmentActivity {
 		utils.setTheme(this);
 		super.onCreate(savedInstanceState);
 
-		startService(new Intent(this, CalendarService.class));
+		startService(new Intent(this, ApplicationService.class));
 
 		boolean removeTitle = true;
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
@@ -133,7 +133,7 @@ public class CalendarActivity extends FragmentActivity {
 
 			@Override
 			public Fragment getItem(int position) {
-				CalendarMonthFragment fragment = new CalendarMonthFragment();
+				MonthFragment fragment = new MonthFragment();
 				Bundle args = new Bundle();
 				args.putInt("offset", position - MONTHS_LIMIT / 2);
 				fragment.setArguments(args);
@@ -185,14 +185,14 @@ public class CalendarActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		if (itemId == R.id.menu_dateconverter) {
-			startActivity(new Intent(this, CalendarConverterActivity.class));
+			startActivity(new Intent(this, ConverterActivity.class));
 		} else if (itemId == R.id.menu_compass) {
 			startActivity(new Intent(this, CompassActivity.class));
 		} else if (itemId == R.id.menu_settings) {
 			startActivityForResult(new Intent(this,
-					CalendarPreferenceActivity.class), 0);
+					ApplicationPreference.class), 0);
 		} else if (itemId == R.id.menu_about) {
-			startActivity(new Intent(this, CalendarAboutActivity.class));
+			startActivity(new Intent(this, AboutActivity.class));
 		} else if (itemId == R.id.menu_exit) {
 			finish();
 		}
