@@ -1,23 +1,4 @@
-package com.byagowi.persiancalendar;
-
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.graphics.Typeface;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
-import calendar.AbstractDate;
-import calendar.CivilDate;
-import calendar.DateConverter;
-import calendar.PersianDate;
-import com.azizhuss.arabicreshaper.ArabicShaping;
-import com.byagowi.common.IterableNodeList;
-import com.github.praytimes.CalculationMethod;
-import com.github.praytimes.Clock;
-import com.github.praytimes.Coordinate;
-import com.github.praytimes.Locations;
+package com.byagowi.persiancalendar.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +18,27 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Typeface;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+import calendar.AbstractDate;
+import calendar.CivilDate;
+import calendar.DateConverter;
+import calendar.PersianDate;
+
+import com.azizhuss.arabicreshaper.ArabicShaping;
+import com.byagowi.common.IterableNodeList;
+import com.byagowi.persiancalendar.R;
+import com.github.praytimes.CalculationMethod;
+import com.github.praytimes.Clock;
+import com.github.praytimes.Coordinate;
+import com.github.praytimes.Locations;
 
 /**
  * Common utilities that needed for this calendar
@@ -78,6 +80,7 @@ public class Utils {
 	public final String islamic = textShaper("هجری قمری");
 	public final String georgian = textShaper("میلادی");
 	public final String equalWith = textShaper("برابر با");
+	public final String irdt = textShaper("به وقت ایران");
 
 	private final char[] arabicDigits = { '0', '1', '2', '3', '4', '5', '6',
 			'7', '8', '9' };

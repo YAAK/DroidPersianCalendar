@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.byagowi.persiancalendar"
-    android:versionCode="36"
-    android:versionName="3.06" >
+    android:versionCode="37"
+    android:versionName="3.07" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -17,15 +17,8 @@
         android:supportsRtl="true" >
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".SplashScreen" >
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,7 +69,7 @@
         </activity>
 
         <receiver
-            android:name=".SystemStartup"
+            android:name=".daemon.StartupListener"
             android:exported="false" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -84,12 +77,12 @@
         </receiver>
 
         <service
-            android:name=".ApplicationService"
+            android:name=".daemon.Daemon"
             android:label="Calendar Service" >
         </service>
 
         <receiver
-            android:name=".Widget1x1"
+            android:name=".daemon.Widget1x1Listener"
             android:exported="false"
             android:icon="@drawable/launcher_icon"
             android:label="@string/widget_mini_name" >
@@ -102,7 +95,7 @@
                 android:resource="@xml/persiancalendar_provider1x1" />
         </receiver>
         <receiver
-            android:name=".Widget4x1"
+            android:name=".daemon.Widget4x1Listener"
             android:exported="false"
             android:icon="@drawable/launcher_icon"
             android:label="@string/widget_name" >
@@ -116,7 +109,7 @@
         </receiver>
 
         <service
-            android:name=".DashClockUpdate"
+            android:name=".daemon.DashClockListener"
             android:icon="@drawable/day31"
             android:label="@string/app_name"
             android:permission="com.google.android.apps.dashclock.permission.READ_EXTENSION_DATA" >
