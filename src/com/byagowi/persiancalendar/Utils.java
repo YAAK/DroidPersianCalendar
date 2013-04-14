@@ -52,9 +52,10 @@ public class Utils {
 		}
 		return myInstance;
 	}
-	
+
 	private Utils() {
 	}
+
 	//
 
 	public final char PERSIAN_COMMA = '،';
@@ -74,10 +75,20 @@ public class Utils {
 		return "";
 	}
 
+	// I couldn't put them in strings.xml because I want them always in Persian
 	public final String shamsi = textShaper("هجری خورشیدی");
 	public final String islamic = textShaper("هجری قمری");
 	public final String georgian = textShaper("میلادی");
 	public final String equalWith = textShaper("برابر با");
+	public final String version = textShaper("نسخهٔ");
+	public final String today = textShaper("امروز");
+
+	public final String imsak = textShaper("اذان صبح");
+	public final String sunrise = textShaper("طلوع آفتاب");
+	public final String dhuhr = textShaper("اذان ظهر");
+	public final String sunset = textShaper("غروب آفتاب");
+	public final String maghrib = textShaper("اذان مغرب");
+	public final String midnight = textShaper("نیمه وقت شرعی");
 
 	private final char[] arabicDigits = { '0', '1', '2', '3', '4', '5', '6',
 			'7', '8', '9' };
@@ -88,6 +99,9 @@ public class Utils {
 
 	private final String[] dayOfWeekName = { "", "یکشنبه", "دوشنبه", "سه‌شنبه",
 			"چهارشنبه", "پنجشنبه", "جمعه", "شنبه" };
+
+	final public String[] firstCharOfDaysOfWeekName = { "ش", "ی", "د", "س", "چ", "پ",
+			"ج" };
 
 	public String getDayOfWeekName(int dayOfWeek) {
 		return dayOfWeekName[dayOfWeek];
@@ -230,7 +244,8 @@ public class Utils {
 
 	public String dateToString(AbstractDate date, char[] digits) {
 		return formatNumber(date.getDayOfMonth(), digits) + ' '
-				+ date.getMonthName() + ' ' + formatNumber(date.getYear(), digits);
+				+ date.getMonthName() + ' '
+				+ formatNumber(date.getYear(), digits);
 	}
 
 	public String dayTitleSummary(CivilDate civilDate, char[] digits) {

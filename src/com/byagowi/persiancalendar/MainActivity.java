@@ -62,6 +62,7 @@ public class MainActivity extends FragmentActivity {
 
 		// Reset button
 		resetButton = (Button) findViewById(R.id.reset_button);
+		resetButton.setText(utils.today);
 		resetButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {

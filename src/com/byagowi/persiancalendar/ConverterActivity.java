@@ -101,7 +101,7 @@ public class ConverterActivity extends Activity {
 				+ yearSpinner.getSelectedItemPosition();
 		int month = monthSpinner.getSelectedItemPosition() + 1;
 		int day = daySpinner.getSelectedItemPosition() + 1;
-		Calendars calendarType = detectSelectedCalendar();
+		CalendarType calendarType = detectSelectedCalendar();
 
 		CivilDate civilDate = null;
 		PersianDate persianDate = null;
@@ -218,17 +218,17 @@ public class ConverterActivity extends Activity {
 
 	}
 
-	Calendars detectSelectedCalendar() {
-		Calendars calendarType = null;
+	CalendarType detectSelectedCalendar() {
+		CalendarType calendarType = null;
 		if (utils.georgian.equals(calendarTypeSpinner.getSelectedItem()
 				.toString())) {
-			calendarType = Calendars.GEORGIAN;
+			calendarType = CalendarType.GEORGIAN;
 		} else if (utils.shamsi.equals(calendarTypeSpinner.getSelectedItem()
 				.toString())) {
-			calendarType = Calendars.SHAMSI;
+			calendarType = CalendarType.SHAMSI;
 		} else if (utils.islamic.equals(calendarTypeSpinner.getSelectedItem()
 				.toString())) {
-			calendarType = Calendars.ISLAMIC;
+			calendarType = CalendarType.ISLAMIC;
 		}
 		return calendarType;
 	}

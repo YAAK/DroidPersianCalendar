@@ -111,11 +111,9 @@ public class MonthFragment extends Fragment {
 		currentMonthTextView.setText(utils.getMonthYearTitle(persianDate,
 				digits));
 
-		String[] firstCharOfDaysOfWeekName = { "ش", "ی", "د", "س", "چ", "پ",
-				"ج" };
 		for (int i : new Range(0, 7)) {
 			TextView textView = daysTextViews[0][6 - i];
-			textView.setText(firstCharOfDaysOfWeekName[i]);
+			textView.setText(utils.firstCharOfDaysOfWeekName[i]);
 		}
 		try {
 			PersianDate today = DateConverter.civilToPersian(new CivilDate());
