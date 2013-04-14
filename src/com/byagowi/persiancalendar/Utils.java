@@ -99,11 +99,11 @@ public class Utils {
 	public final char[] arabicIndicDigits = { '٠', '١', '٢', '٣', '٤', '٥',
 			'٦', '٧', '٨', '٩' };
 
+	public final String[] firstCharOfDaysOfWeekName = { "ش", "ی", "د", "س",
+			"چ", "پ", "ج" };
+
 	private final String[] dayOfWeekName = { "", "یکشنبه", "دوشنبه", "سه‌شنبه",
 			"چهارشنبه", "پنجشنبه", "جمعه", "شنبه" };
-
-	final public String[] firstCharOfDaysOfWeekName = { "ش", "ی", "د", "س",
-			"چ", "پ", "ج" };
 
 	public String getDayOfWeekName(int dayOfWeek) {
 		return dayOfWeekName[dayOfWeek];
