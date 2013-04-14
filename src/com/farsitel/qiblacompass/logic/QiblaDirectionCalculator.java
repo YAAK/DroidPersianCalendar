@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-// Originally was com.farsitel.qiblacompass.logic
-package com.byagowi.persiancalendar;
+package com.farsitel.qiblacompass.logic;
 
 /*
  * This class represent logic for computing Qibla angle form north
