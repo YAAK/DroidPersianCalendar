@@ -3,8 +3,6 @@ package com.byagowi.persiancalendar;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.google.android.apps.dashclock.api.ExtensionData;
-
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -21,6 +19,8 @@ import android.widget.RemoteViews;
 import calendar.CivilDate;
 import calendar.DateConverter;
 import calendar.PersianDate;
+
+import com.google.android.apps.dashclock.api.ExtensionData;
 
 public class UpdateUtils {
 	private static UpdateUtils myInstance;

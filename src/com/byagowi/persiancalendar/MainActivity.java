@@ -9,7 +9,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.*;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import calendar.CivilDate;
@@ -190,8 +194,8 @@ public class MainActivity extends FragmentActivity {
 		} else if (itemId == R.id.menu_compass) {
 			startActivity(new Intent(this, CompassActivity.class));
 		} else if (itemId == R.id.menu_settings) {
-			startActivityForResult(new Intent(this,
-					ApplicationPreference.class), 0);
+			startActivityForResult(
+					new Intent(this, ApplicationPreference.class), 0);
 		} else if (itemId == R.id.menu_about) {
 			startActivity(new Intent(this, AboutActivity.class));
 		} else if (itemId == R.id.menu_exit) {

@@ -1,24 +1,5 @@
 package com.byagowi.persiancalendar;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.graphics.Typeface;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
-import calendar.AbstractDate;
-import calendar.CivilDate;
-import calendar.DateConverter;
-import calendar.PersianDate;
-import com.azizhuss.arabicreshaper.ArabicShaping;
-import com.byagowi.common.IterableNodeList;
-import com.github.praytimes.CalculationMethod;
-import com.github.praytimes.Clock;
-import com.github.praytimes.Coordinate;
-import com.github.praytimes.Locations;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -37,6 +18,26 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Typeface;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+import calendar.AbstractDate;
+import calendar.CivilDate;
+import calendar.DateConverter;
+import calendar.PersianDate;
+
+import com.azizhuss.arabicreshaper.ArabicShaping;
+import com.byagowi.common.IterableNodeList;
+import com.github.praytimes.CalculationMethod;
+import com.github.praytimes.Clock;
+import com.github.praytimes.Coordinate;
+import com.github.praytimes.Locations;
 
 /**
  * Common utilities that needed for this calendar
@@ -100,8 +101,8 @@ public class Utils {
 	private final String[] dayOfWeekName = { "", "یکشنبه", "دوشنبه", "سه‌شنبه",
 			"چهارشنبه", "پنجشنبه", "جمعه", "شنبه" };
 
-	final public String[] firstCharOfDaysOfWeekName = { "ش", "ی", "د", "س", "چ", "پ",
-			"ج" };
+	final public String[] firstCharOfDaysOfWeekName = { "ش", "ی", "د", "س",
+			"چ", "پ", "ج" };
 
 	public String getDayOfWeekName(int dayOfWeek) {
 		return dayOfWeekName[dayOfWeek];

@@ -1,5 +1,8 @@
 package com.byagowi.persiancalendar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,11 +11,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import calendar.*;
-import com.byagowi.common.Range;
+import calendar.AbstractDate;
+import calendar.CivilDate;
+import calendar.DateConverter;
+import calendar.IslamicDate;
+import calendar.PersianDate;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.byagowi.common.Range;
 
 /**
  * Program activity for android
