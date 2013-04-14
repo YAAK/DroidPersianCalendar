@@ -1,17 +1,8 @@
 package com.github.praytimes;
 
-import static com.github.praytimes.StaticUtils.deg;
-import static com.github.praytimes.StaticUtils.dtr;
-import static com.github.praytimes.StaticUtils.fixHour;
-import static com.github.praytimes.StaticUtils.min;
-import static com.github.praytimes.StaticUtils.rtd;
+import java.util.*;
 
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TimeZone;
+import static com.github.praytimes.StaticUtils.*;
 
 public class PrayTimesCalculator {
 	private final MinuteOrAngleDouble _imsak = min(10);

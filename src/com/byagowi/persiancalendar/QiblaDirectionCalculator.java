@@ -17,7 +17,7 @@
  */
 
 // Originally was com.farsitel.qiblacompass.logic
-package com.byagowi.persiancalendar.utils;
+package com.byagowi.persiancalendar;
 
 /*
  * This class represent logic for computing Qibla angle form north

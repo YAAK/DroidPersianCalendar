@@ -16,9 +16,7 @@ import calendar.CivilDate;
 import calendar.DateConverter;
 import calendar.DayOutOfRangeException;
 import calendar.PersianDate;
-
 import com.byagowi.common.Range;
-import com.byagowi.persiancalendar.utils.Utils;
 
 /**
  * Calendar month view fragment

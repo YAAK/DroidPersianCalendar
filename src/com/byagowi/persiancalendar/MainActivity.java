@@ -9,19 +9,12 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.Window;
+import android.view.*;
 import android.widget.Button;
 import android.widget.TextView;
 import calendar.CivilDate;
 import calendar.DateConverter;
 import calendar.PersianDate;
-
-import com.byagowi.persiancalendar.daemon.Daemon;
-import com.byagowi.persiancalendar.utils.Utils;
 
 /**
  * Program activity for android
@@ -40,7 +33,7 @@ public class MainActivity extends FragmentActivity {
 		utils.setTheme(this);
 		super.onCreate(savedInstanceState);
 
-		startService(new Intent(this, Daemon.class));
+		startService(new Intent(this, ApplicationService.class));
 
 		boolean removeTitle = true;
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
