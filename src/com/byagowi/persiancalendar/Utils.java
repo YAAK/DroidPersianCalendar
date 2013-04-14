@@ -83,6 +83,7 @@ public class Utils {
 	public final String equalWith = textShaper("برابر با");
 	public final String version = textShaper("نسخهٔ");
 	public final String today = textShaper("امروز");
+	public final String irdt = textShaper("به وقت ایران");
 
 	public final String imsak = textShaper("اذان صبح");
 	public final String sunrise = textShaper("طلوع آفتاب");

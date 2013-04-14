@@ -99,7 +99,7 @@ public class UpdateUtils {
 			boolean in24 = prefs.getBoolean("WidgetIn24", true);
 			text1 = utils.getPersianFormattedClock(calendar, digits, in24);
 			if (iranTime) {
-				text3 = "(به وقت ایران)";
+				text3 = "(" + utils.irdt + ")";
 			}
 		}
 
