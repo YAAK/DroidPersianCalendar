@@ -1,4 +1,4 @@
-package com.byagowi.persiancalendar;
+package com.byagowi.persiancalendar.view;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -18,6 +18,10 @@ import calendar.DayOutOfRangeException;
 import calendar.PersianDate;
 
 import com.byagowi.common.Range;
+import com.byagowi.persiancalendar.ClickDayListener;
+import com.byagowi.persiancalendar.MainActivity;
+import com.byagowi.persiancalendar.R;
+import com.byagowi.persiancalendar.Utils;
 
 /**
  * Calendar month view fragment
