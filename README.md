@@ -60,8 +60,4 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 
 4. Build
 ==============================
-1. Clone this and https://github.com/ebraminio/android-ColorPickerPreference
-beside each other
-3. Import both of them
-4. Check your text editor and compiler default encoding is UTF-8.
-5. Enjoy!
+Just import it on Android Studio
