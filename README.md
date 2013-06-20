@@ -1,5 +1,5 @@
-﻿
-Android Persian Calendar
+Android Persian Calendar [![Build Status](https://buildhive.cloudbees.com/job/ebraminio/job/DroidPersianCalendar/badge/icon)](https://buildhive.cloudbees.com/job/ebraminio/job/DroidPersianCalendar/)
+=============================
 <div dir="rtl">
 تقویم فارسی اندروید
 </div>
