@@ -80,7 +80,7 @@
       <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PersianCalendar/src/main/java/com/byagowi/persiancalendar/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="334" column="39" selection-start="11801" selection-end="11801" vertical-scroll-proportion="0.0" vertical-offset="3962" max-vertical-offset="4635">
+            <state line="334" column="39" selection-start="11801" selection-end="11801" vertical-scroll-proportion="0.0" vertical-offset="4995" max-vertical-offset="5205">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="holidays.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PersianCalendar/src/main/res/raw/holidays.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="304" column="22" selection-start="6476" selection-end="6476" vertical-scroll-proportion="0.5735786" vertical-offset="4217" max-vertical-offset="4815">
+            <state line="304" column="22" selection-start="6476" selection-end="6476" vertical-scroll-proportion="0.61538464" vertical-offset="4192" max-vertical-offset="4815">
               <folding />
             </state>
           </provider>
@@ -98,7 +98,7 @@
       <file leaf-file-name="String.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file:///opt/android-sdk/sources/android-17/java/lang/String.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1354" column="24" selection-start="50382" selection-end="50382" vertical-scroll-proportion="0.0" vertical-offset="19545" max-vertical-offset="30225">
+            <state line="1354" column="24" selection-start="50382" selection-end="50382" vertical-scroll-proportion="0.0" vertical-offset="20295" max-vertical-offset="30615">
               <folding />
             </state>
           </provider>
@@ -203,8 +203,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,6 +345,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -365,11 +365,11 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -554,7 +554,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="743" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -572,7 +572,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28787878" sideWeight="0.6282051" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28787878" sideWeight="0.6282051" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -692,12 +692,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PersianCalendar/src/main/res/xml/preferences.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="53" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="1335">
-          <folding>
-            <element signature="e#1204#1227#0" expanded="true" />
-            <element signature="e#1258#1279#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="21" column="53" selection-start="953" selection-end="953" vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="1335" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PersianCalendar/src/main/AndroidManifest.xml">
@@ -727,13 +722,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PersianCalendar/src/main/res/layout/about.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file:///opt/android-sdk/sources/android-17/java/lang/String.java">
@@ -752,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PersianCalendar/src/main/res/raw/holidays.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="304" column="22" selection-start="6476" selection-end="6476" vertical-scroll-proportion="0.5735786" vertical-offset="4217" max-vertical-offset="4815">
+        <state line="304" column="22" selection-start="6476" selection-end="6476" vertical-scroll-proportion="0.61538464" vertical-offset="4192" max-vertical-offset="4815">
           <folding />
         </state>
       </provider>
