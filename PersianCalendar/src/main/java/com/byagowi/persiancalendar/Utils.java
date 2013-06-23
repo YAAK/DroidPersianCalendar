@@ -332,7 +332,8 @@ public class Utils {
     public String getHolidayTitle(PersianDate day) {
         for (Holiday holiday : holidays) {
             if (holiday.getDate().equals(day)) {
-                return holiday.getTitle();
+                // trim XML whitespaces and newlines
+                return holiday.getTitle().replaceAll("\n", "").trim();
             }
         }
         return null;
