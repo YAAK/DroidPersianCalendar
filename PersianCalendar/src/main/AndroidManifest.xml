@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.byagowi.persiancalendar"
-          android:versionCode="41"
-          android:versionName="4.01">
+          android:versionCode="42"
+          android:versionName="4.02">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
@@ -79,10 +79,11 @@
         </activity>
 
         <receiver
-                android:name=".SystemStartup"
+                android:name="com.byagowi.persiancalendar.SystemStartup"
                 android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
                 <action android:name="android.intent.action.PHONE_STATE"/>
             </intent-filter>
         </receiver>
