@@ -36,7 +36,7 @@ Contents
 ==============================
 * https://play.google.com/store/apps/details?id=com.byagowi.persiancalendar
 * http://cafebazaar.ir/app/com.byagowi.persiancalendar
-* https://github.com/ebraminio/DroidPersianCalendar/raw/master/PersianCalendar.apk
+* https://github.com/ebraminio/DroidPersianCalendar/releases/
 * http://bit.ly/pcalendar
 
 <div align="center"><img src="https://github.com/ebraminio/DroidPersianCalendar/raw/master/extra/githubapkurl.png"
