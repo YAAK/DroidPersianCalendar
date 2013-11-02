@@ -41,7 +41,7 @@
     <string name="altitude_praytime">به متر (اختیاری)</string>
     <string name="location">مکان</string>
     <string name="location_help">اگر هیچ‌کدام نیست مختصات را زیر وارد کنید</string>
-    <string name="showing_iran_time">نمایش ویجت‌ها و نوار مطلع‌سازی به وقت ایران</string>
+    <string name="showing_iran_time">نمایش ویجت‌ها و نوار مطلع‌سازی به وقت ایران حتی در بیرون از ایران</string>
     <string name="iran_time">وقت ایران</string>
     <string name="qibla_compass">قطب‌نما/قبله‌نما</string>
     <string name="compass_not_found">سنسور قطب‌نما یافت نشد</string>

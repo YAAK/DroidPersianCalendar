@@ -36,7 +36,9 @@
         <item>Alborz</item>
         <item>Ahvaz</item>
         <item>Ilam</item>
+        <item>Bamyan</item>
         <item>Bojnurd</item>
+        <item>Balkh</item>
         <item>Bandar Abbas</item>
         <item>Bushehr</item>
         <item>Birjand</item>
@@ -51,13 +53,18 @@
         <item>Sanandaj</item>
         <item>Shahr-e-kord</item>
         <item>Shiraz</item>
+        <item>Ghazni</item>
         <item>Ghazvin</item>
         <item>Qom</item>
+        <item>Kandahar</item>
         <item>Kabul</item>
         <item>Kerman</item>
         <item>Kermanshah</item>
         <item>Gorgan</item>
         <item>Mashhad</item>
+        <item>Nangarhar</item>
+        <item>Herat</item>
+        <item>Helmand</item>
         <item>Hamedan</item>
         <item>Yasuj</item>
         <item>Yazd</item>
@@ -71,7 +78,9 @@
         <item>ALBORZ</item>
         <item>AHVAZ</item>
         <item>ILAM</item>
+        <item>BAMYAN</item>
         <item>BOJNURD</item>
+        <item>BALKH</item>
         <item>BANDAR_ABAS</item>
         <item>BUSHEHR</item>
         <item>BIRJAND</item>
@@ -86,13 +95,18 @@
         <item>SANANDAJ</item>
         <item>SHAHREKORD</item>
         <item>SHIRAZ</item>
+        <item>GHAZNI</item>
         <item>GHAZVIN</item>
         <item>GHOM</item>
+        <item>KANDAHAR</item>
         <item>KABUL</item>
         <item>KERMAN</item>
         <item>KERMANSHAH</item>
         <item>GORGAN</item>
         <item>MASHHAD</item>
+        <item>NANGARHAR</item>
+        <item>HERAT</item>
+        <item>HELMAND</item>
         <item>HAMEDAN</item>
         <item>YASUJ</item>
         <item>YAZD</item>
